@@ -1,0 +1,43 @@
+body{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  width: 10px;
+  border-radius: 1px;
+  background: #003e3f;
+}
+::-webkit-scrollbar-track{
+ background:transparent ;
+ border: 2px solid whitesmoke;
+ border-radius: 4px;
+
+} 
+::-webkit-scrollbar-thumb{
+  width: 24px;
+  background: #003546;
+  border-radius: 8px; 
+ }
+.header{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 1;
+}
+.links{
+  margin-right:1.5vw;
+  color:white !important;
+}
+.links:hover{
+  color:white !important;
+  font-weight: bold;
+  background-color:#004658;
+  border-radius:3px;
+}
+.logo{
+    height: 60px;
+    width:60px;
+}
+.sub{
+    margin-left:1.5vw;
+}

@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lecture Videos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <!-- Javascript and Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fontawesome.com/v4.7.0/icon/times">
+  <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/lecture.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/pict.png' %}" />
+</head>
+<script>
+  videojs('my-player', {
+    controls: true,
+    autoplay: false,
+    preload: 'auto'
+  });
+
+</script>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark header ">
+    <div class="container-fluid">
+      <a href="{% url  'home' %}"><img class="logo" src="{% static 'images/pict.png' %}" /></a>
+      <form class='select' method="POST" id='subject_form' name="subject_form" action="{% url 'video_lectures' %}">
+        {% csrf_token %}
+        <select name="subject" id="subject" onChange="this.form.submit()">
+          <option value="BXE">BXE</option>
+          {% if request.session.subject == "CS" %}
+          <option value="CS" selected>Control Systems</option>
+          {% else %}
+          <option value="CS">Control Systems</option>
+          {% endif %}
+        </select>
+        <noscript><input type='button' name='submit' /> </noscript>
+      </form>
+      <button class="navbar-toggler justify-content-center bg-transparent" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link links" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="{% url 'class_notes' %}">Course Material</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="{% url 'laboratory_videos' %}">Laboratory Videos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="{% url 'profile' %}">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row units">
+      {% for video in videos %}
+      <div class="col-12 col-sm-3">
+        <div class="card video shadow">
+          <video id ='{{ video.id }}' class="video-js vjs-matrix vjs-big-play-centered thumbnail card-img card-img-overlay" controls preload="auto" 
+          {% if video.video_thumb %} poster="{{ video.video_thumb.url }}" 
+          {% endif %} 
+          data-setup=
+          "{controls: true,
+            autoplay: false,
+            preload: 'auto'}" >
+          <source src="{{ video.content_file.url }}" type="video/mp4" />
+          </video>
+          <!--<div class="card-img-overlay thumbnail">
+            <a href="#"><i class="fa fa-play-circle text-white" aria-hidden="true"></i></a>
+          </div>-->
+          <div class="card-body">
+            <h5 class="card-title">Lecture No: {{ video.lecture_number }}&nbsp;&nbsp;&nbsp;<a href="{{ video.content_file.url }}" download="{{ video.content_file.url }}"><i class="fa fa-download"
+                  aria-hidden="true"></i></a></h5>
+              <!--<h6>{{video.topic_name }}</h6>-->
+            <p class="card-text">{{ video.description }}</p>
+            <p class="card-text"><small class="text-muted">{{ video.uploaded_on }}</small></p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <!-- Footer -->
+<div class="pg-footer">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-content-column">
+        <div class="footer-menu">
+          <h3> Control System</h3>
+          <p>A control system is a system of devices or set of devices, that manages commands,
+            or regulates the behavior of other device(s) or system(s) to achieve desire results.</p>
+        </div>
+      </div>
+
+      <div class="footer-content-column">
+        <div class="footer-menu">
+          <h3>Basic Electronics Engineering</h3>
+          <p>In Basic Electronic engineering it utilizes nonlinear and active electrical components
+            to design electronic circuits, devices and integrated circuits.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="footer-copyright-wrapper">
+        <p class="footer-copyright-text">
+          <span class="footer-copyright-link" href="#" target="_self"> © Copyright Sakshi Hosamani | All rights
+            reserved. <br><br><a href="#">Developers</a> </span>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+ <script>
+   var videos = document.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++)
+      videos[i].addEventListener('play', function () { pauseAll(this) }, true);
+
+
+    function pauseAll(elem) {
+      for (var i = 0; i < videos.length; i++) {
+        //Is this the one we want to play?
+        if (videos[i] == elem) continue;
+        //Have we already played it && is it already paused?
+        if (videos[i].played.length > 0 && !videos[i].paused) {
+          // Then pause it now
+          videos[i].pause();
+        }
+      }
+    }
+ </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{% extends "admin/change_list.html" %}
+{% block object-tools %}
+
+<form id ='import-form' method="POST">
+    {% csrf_token %}
+    
+    <label for="path">Path</label>
+    <input type="text" name="path" id="path">
+    <label for="csv_file_name">Filename</label>
+    <input type="text" name="csv_file_name" id="csv_file_name">
+    <button>Import</button>
+</form>
+<script>
+    let importform = document.querySelector('#import-form')
+    importform.querySelector('input[name = "path"]').addEventListener('change',function(e){
+        var csv_file_name = document.getElementById('csv_file_name').value;
+        let path1 = e.target.value
+    importform.action = 'import_profiles/'+ path1 + csv_file_name+'/'
+    })
+</script>
+{{ block.super }}
+
+{% endblock object-tools %}
