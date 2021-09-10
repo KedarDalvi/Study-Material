@@ -1,33 +1,32 @@
    # Electronics Study Material Website(ESM)
 
-# Hosting Link -> [Click Here](https://electronicsstudymaterial.herokuapp.com/)
+# Hosting Link -> [electronicsstudymaterial.com](https://electronicsstudymaterial.herokuapp.com/)
 
-# Home Page 
+## Home Page 
 
 ![](Project_Screenshots/homepage.jpg) 
 
-
-# Home Page (Unit Information)
+## Home Page (Unit Information)
 
 ![](Project_Screenshots/homepageunits.jpg) 
 
-# Course Material 
+## Course Material 
 
 ![](Project_Screenshots/coursematerial.jpg) 
 
-# Lecture Videos:
+## Lecture Videos:
 
 ![](Project_Screenshots/Lecture_Videos.jpg) 
 
-# Laboratory Videos
+## Laboratory Videos
 
 ![](Project_Screenshots/laboratory_videos.jpg) 
 
-# Content Not yet Uploaded: 
+## Content Not yet Uploaded: 
 
 ![](Project_Screenshots/content_yet_to_be_uploaded.jpg) 
 
-# Developers Page:
+## Developers Page:
 
 ![](Project_Screenshots/developers.jpg) 
 
