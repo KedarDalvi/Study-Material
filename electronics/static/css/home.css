@@ -7,7 +7,7 @@ body{
 ::-webkit-scrollbar{
   width: 10px;
   border-radius: 1px;
-  background: #003e3f;
+  background: #004658;;
 }
 ::-webkit-scrollbar-track{
  background:whitesmoke ;
@@ -17,7 +17,7 @@ body{
 } 
 ::-webkit-scrollbar-thumb{
   width: 24px;
-  background: #003546;
+  background: #004658;
   border-radius: 8px; 
  }
 /* Subject Dropdown */

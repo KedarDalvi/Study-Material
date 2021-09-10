@@ -311,6 +311,9 @@ a {
         font-size:6vw;
         margin-bottom:5vw;
     }
+    .dropdown{
+        margin-top: 15vw;
+    }
   }
   @media (min-width:480px) and (max-width:599px)  { /* smartphones, Android phones, landscape iPhone */
     .footer-content {

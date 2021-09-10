@@ -127,3 +127,6 @@ def laboratory_videos(request):
     
 def profile(request):
     return render(request,'electronics/profile.html')
+
+def developers(request):
+    return render(request,'electronics/developers.html')

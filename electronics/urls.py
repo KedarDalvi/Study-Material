@@ -14,5 +14,5 @@ urlpatterns = [
     path('classnotes/', views.Class_notes , name='class_notes'),
     url(r'classnotes/^view-pdf/$', views.pdf_view, name='pdf_view'),
     #path('elctronics/', admin.site.urls , name='elc-admin'),
-
+    path('Developers/',views.developers,name='developers'),
 ]

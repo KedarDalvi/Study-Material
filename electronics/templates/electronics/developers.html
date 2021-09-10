@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Laboratory Videos </title>
+    <title>Developers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,26 +18,15 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://fontawesome.com/v4.7.0/icon/times">
-    <link rel="stylesheet" href="{% static 'css/content_not_found.css' %}">
+    <link rel="stylesheet" href="{% static 'css/developers.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'images/pict.png' %}" />
+
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark header ">
         <div class="container-fluid">
             <a href="{% url 'home' %}"><img class="logo" src="{% static 'images/pict.png' %}" /></a>
-            <form class='select' method="POST" id='subject_form' name="subject_form" action="{% url 'laboratory_videos' %}">
-                {% csrf_token %}
-                <select name="subject" id="subject" onChange="this.form.submit()">
-                    <option value="BXE">BXE</option>
-                    {% if request.session.subject == "CS" %}
-                    <option value="CS" selected>Control Systems</option>
-                    {% else %}
-                    <option value="CS">Control Systems</option>
-                    {% endif %}
-                </select>
-                <noscript><input type='button' name='submit' /> </noscript>
-            </form>
             <button class="navbar-toggler justify-content-center bg-transparent" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -55,29 +44,55 @@
                         <a class="nav-link links" href="{% url 'video_lectures' %}">Lecture Videos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link links" href="{% url 'laboratory_videos' %}">Laboratory Videos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link links" href="{% url 'profile' %}">Profile</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+<!-- email :
+phone : 
+github : 
+linkedin : -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-6 container aneesh">
+                <div class="img-area">
+                    <div class="inner-area">
+                        <img src="{% static 'images/aneesh_berde.jpeg' %}" alt="profile image">
+                    </div>
+                </div>
+                <div class="name">Aneesh Berde</div>
+                <div class="about">Web Developer</div>
+                <div class="social-icons">
+                    <a href="tel:+919975571854" class="phone"><i class="fa fa-phone"></i></a>
+                    <a href="mailto:aneeshberde25@gmail.com" class="email"><i class="fa fa-envelope-o"></i></a>
+                    <a href="https://www.linkedin.com/in/aneesh-berde/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/Frankenstein25" class="git"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
 
-    <div class="container-fluid not-found">
-        <div id="hourglass" class="fa-stack fa-4x">
-            <i class="fa fa-stack-1x fa-hourglass-start"></i>
-            <i class="fa fa-stack-1x fa-hourglass-half"></i>
-            <i class="fa fa-stack-1x fa-hourglass-end"></i>
-            <i class="fa fa-stack-1x fa-hourglass-end"></i>
-            <i class="fa fa-stack-1x fa-hourglass-o"></i>
+            <div class="col-12 col-sm-6 container kedar">
+                <div class="img-area">
+                    <div class="inner-area">
+                        <img src="{% static 'images/kedar_dalvi.jpeg' %}" alt="profile image">
+                    </div>
+                </div>
+                <div class="name">Kedar Dalvi</div>
+                <div class="about">Web Developer</div>
+                <div class="social-icons">
+                    <a href="tel:+917058058059" class="phone"><i class="fa fa-phone"></i></a>
+                    <a href="mailto:kedardalvi2001@gmail.com" class="email"><i class="fa fa-envelope-o"></i></a>
+                    <a href="https://www.linkedin.com/in/kedar-dalvi/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/KedarDalvi" class="git"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="content">
-            <p><span class="oops">Oops !</span> Content Not Available.</p>
-            <p>Material will be uploaded soon !</p>
-        </div>
-    </div>
 
     <!-- Footer -->
-
     <div class="pg-footer">
         <footer class="footer">
             <div class="footer-content">
@@ -103,12 +118,13 @@
                 <div class="footer-copyright-wrapper">
                     <p class="footer-copyright-text">
                         <span class="footer-copyright-link" href="#" target="_self"> © Copyright Sakshi Hosamani | All
-                            rights reserved. <br><br><a href="{% url 'developers' %}">Developers</a> </span>
+                            rights reserved. <br><br><a href="#">Developers</a> </span>
                     </p>
                 </div>
             </div>
         </footer>
     </div>
+
 </body>
 
 </html>
