@@ -1,5 +1,7 @@
 # Electronics-Study-Mateial-Website 
 
+# Hosting Link -> [Click Here](https://electronicsstudymaterial.herokuapp.com/)
+
 # Home Page 
 
 ![](Project_Screenshots/homepage.jpg) 
@@ -24,3 +26,9 @@
 # Content Not yet Uploaded: 
 
 ![](Project_Screenshots/content_yet_to_be_uploaded.jpg) 
+
+# Developers Page:
+
+![](Project_Screenshots/developers.jpg) 
+
+#Thank You!
