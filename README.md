@@ -15,12 +15,12 @@
 
 # Lecture Videos:
 
-![](Project_Screenshots/Lecture Videos.jpg) 
+![](Project_Screenshots/Lecture_Videos.jpg) 
 
 # Laboratory Videos
 
-![](Project_Screenshots/laboratory videos.jpg) 
+![](Project_Screenshots/laboratory_videos.jpg) 
 
 # Content Not yet Uploaded: 
 
-![](Project_Screenshots/content yet to be uploaded.jpg) 
+![](Project_Screenshots/content_yet_to_be_uploaded.jpg) 
